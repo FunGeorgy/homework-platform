@@ -1,0 +1,436 @@
+@import '~normalize.css';
+
+// FONTS
+@import './fonts.scss';
+// SCSS содержит много модулей и функций https://sass-lang.com/documentation/modules чекать тут все что надо!!!
+// VARIABLES
+$main-color: tomato;
+$blColor: aquamarine;
+$blHeigt: 200px;
+$blWidth: 300px;
+$blMarginBot: 20px;
+$blborder: 4px solid green;
+$mainFont: 30px;
+$someVar: some_class;
+// MIXIN (шаблон со свойствами)
+// так же можно устанавливать значения по умолчанию, которые потом можно перебивать! 
+@mixin font ($color: red, $fontW: 600){
+  font-size: $mainFont;
+  font-weight: $fontW;
+  font-family: 'Roboto';
+  color: $color;
+}
+// mixin с бесконечными перемеными
+@mixin padd($padd...){
+  padding: $padd;
+}
+// mixin может включать в себя псевдоэлементы + 
+// так же можно писать классы и элементы к которым может обращаться mixit тогда он просто вызываеться @include
+// для внесения дополнительных свойств и стилей в mixid можно добавить оператор @content
+@mixin link($link, $hover, $active, $visited){
+  color: $link;
+  &:hover{
+    color: $hover;
+  }
+  &:active{
+    color: $active;
+  }
+  @content;
+}
+// test математических функций (Посмотреть FLEX!!!)
+// @mixin grid($cols, $margin){
+//   // пример одной из функций SCSS 
+//   // background-color: darken( green, 10%);
+//   margin-bottom: $margin;
+//   height: 150px;
+//   // Нельзя использовать разные единицы измерения если % то все в процентах. 
+//   // (100% - 80px) - РАБОТАТЬ НЕ БУДЕТ!!! 
+//   // Пример с условным оператором!!!
+//   // Можно проверять на >, <, <=, >=, !=, ==
+//   @if($cols >= 5 ){
+//     width: 100%;
+//     margin-right: 0;
+//   }
+//   @else{
+//     width: ((100% - (($cols - 1)*$margin)) / $cols);
+//     margin-right: $margin;
+//   }
+//   // получаем последний элемент в ряду и убираем у него margin  
+//   &:nth-child(#{$cols}n){
+//     margin-right: 0;
+//   }
+// }
+// Циклы есть множество но в основном используеться for и то редко до этого доходит
+@for $i from 24 to 29{
+  .#{$someVar}-#{i}{
+    width: 50px + $i;
+    height: 50px + $i; 
+  }
+} 
+// INITIAL
+.container {
+  margin: 0 auto;
+  width: 100%;
+}
+#babylon{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 100;
+  left: 0px;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+// .block:not(.first){
+//   background-color: $blColor;
+//   height: $blHeigt;
+//   width: $blWidth;
+//   margin-bottom: $blMarginBot;
+//   border: $blborder;
+// }
+.first{
+  background-color: yellow;
+  height: 100px;
+  width: $blWidth;
+  margin-bottom: $blMarginBot;
+  border: $blborder;
+}
+
+// #grid{
+//   float: left;
+//   width: 100%;
+//   // берем только дочерние элементы блока grid
+//   >div{
+//     float: left;
+//     @include grid(4, 2%);
+//   }
+// }
+
+body {
+  background-color: rgb(175, 175, 175);
+  color:white;
+  font-family: 'default';
+}
+@font-face {
+  font-family: 'default';
+  src: url(/src/assets/fonts/Roboto-Regular.ttf);
+}
+input.fst_input{
+  size: 100px;
+}
+div.module{
+  background: rgb(185, 185, 185); 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  border: 3px solid #000; 
+  overflow: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center; /* см. ниже */
+  align-items: center;
+  z-index: 99;
+  /* Чтобы окно не прилипало к границе
+  браузера установим отступы */
+  padding:50px;
+}
+
+.image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  height: 50%
+}
+
+
+button.fstButton{
+  box-sizing: border-box;
+  background: rgb(185, 185, 185); 
+  border: 1.5px solid #000; 
+  padding-left:20px;
+  padding-right:20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px #999;
+  color: #000;
+}
+button.closeButton{
+  bottom: 5px;
+  position: absolute;
+  display: flex;
+  box-sizing: border-box;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: #fff4;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px #999;
+  color: #000;
+}
+
+div.boarder{
+  padding-top: 5px;
+  padding-bottom: 7px;
+  border-top: 1.5px solid black;
+}
+
+button.radiusButton{
+  position: absolute;
+  display: flex;
+  box-sizing: border-box;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background: rgb(185, 185, 185);
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px #999;
+  color: #000;
+}
+
+button:hover {
+  color: #fff;
+  background-color: #1e1f1e;
+  background: #1e1f1e;}
+
+button:active {
+color: #fff;
+background-color: #1e1f1e;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
+}
+
+ .homework{
+  margin-top: 10%;
+  font-size: 20px;
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 5%;
+}
+
+.radius{
+  border-radius: 60px;
+  padding: 30px;
+  border: 3px solid rgb(199, 199, 199);
+}
+
+
+
+ul {
+  
+  list-style: none; 
+  margin: 0; 
+  padding-left: 0;
+}
+
+li{
+  display: inline-block;
+  margin-right: -4px;
+}
+
+.codeBlock {
+  max-height: 100vh;
+  min-height: 0%;
+  margin-top: 10%;
+  background: #1e1f1e;
+  font-size: 20px;
+  color:rgb(184, 184, 184);
+  padding-top: 5%;
+  padding-left: 10%;
+  padding-bottom: 5%;
+  overflow-y: scroll;
+
+  
+}
+
+
+.codeBlock::-webkit-scrollbar-track {border-radius: 4px;}
+.codeBlock::-webkit-scrollbar {width: 6px;}
+.codeBlock::-webkit-scrollbar-thumb {border-radius: 4px;background: #f0f2f5;}
+.codeBlock::-webkit-scrollbar-thumb {background:#3e8e41;}
+
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 200px;
+  
+}
+
+.rightbtn{
+  background-color: #4CAF50;
+  position: relative;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 200px;
+  margin-right: 0;
+  margin-left: auto;
+  top: 250px;
+}
+
+.orange{
+  color: rgb(255, 136, 0);
+}
+
+.blue{
+ color: rgb(0, 149, 235);
+}
+
+.green{
+  color: green
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position:fixed;
+  display: inline-block;
+  bottom: 50%;
+  top: 50%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(151, 231, 140);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content button {
+  box-sizing: border-box;
+  background: #666; 
+  border: 1.5px solid #000;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px #999;
+  color: #000;
+  display: block;
+  margin: auto;
+  width: 200px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  
+}
+
+.head {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content button:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.link{
+  text-decoration: none;
+  color: white
+}
+.taskHead{
+  margin-top: 5%;
+  margin-left: 5%;
+  font-size: 20px;
+  border-bottom: #000 solid 2px
+
+}
+
+.codeHead{
+  margin-top: 5%;
+  margin-left: 5%;
+  font-size: 20px;
+  border-bottom: #000 solid 2px
+}
+
+.imgHead{
+ margin-left: auto;
+ margin-right: auto;
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ display: block;
+ object-fit:cover;
+}
+
+input {
+  font-family: inherit;
+  margin-left: 1%;
+  margin-right: 5%;
+  margin-bottom: 10%;
+  margin-top: 2%;
+  width: 25%;
+  border: 0;
+  border-bottom: 2px solid gray;
+  outline: 0;
+  font-size: 1.3rem;
+  color: black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 1.3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+input:focus {
+  padding-bottom: 6px;  
+  font-weight: 700;
+  font-style: italic;
+  border-width: 3px;
+  border-image: linear-gradient(to right, primary,secondary);
+  border-image-slice: 1;
+}
+// FILES
+
+@import 'components/main';
+@import 'components/logo';
