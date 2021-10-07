@@ -37,6 +37,8 @@ function changeTask() {
     
   for (let i = 0; i < mainHomeworks.length; i++) {
       mainHomeworks[i].addEventListener("click", function () {
+        // console.log(document.getElementByid('rightbtn').style.top)
+      document.getElementById('rightbtn').style.top = '0%'
       document.getElementById('dropdown').style.position = "relative"
       document.getElementById('codeBlock').hidden = false;
       document.getElementById('homework').hidden = false;
