@@ -1,8 +1,8 @@
 {
-  "name": "project",
+  "name": "homework-platform",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
@@ -16,7 +16,7 @@
     "javascript",
     "webpack"
   ],
-  "author": "You're welcome! <brovkin.on@gmail.com>",
+  "author": "FunGeorgy https://github.com/FunGeorgy",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.9.0",
