@@ -1,20 +1,19 @@
-
-import './styles/index.scss';
+import './styles/index.css';
 import './assets/fonts/Roboto-Regular.ttf';
-import './component.js';
 import { Homework1 } from "./js/core/homework 19-08-2021.js";
 import { Homework2 } from "./js/core/homework 24-08-2021.js";
 import { Homework3 } from "./js/core/homework 25-08-21.js";
 import { Homework10 } from "./js/core/homework 30-09-2021.js";
 import { Homework11_12 } from "./js/core/homework 5-10-2021.js";
 import { config } from "./js/configs.js";
+import gif from "./assets/images/code.gif";
 
 document.getElementsByTagName('input').text = "Input here"
 document.getElementById('codeBlock').hidden = true;
 document.getElementById('homework').hidden = true;
 document.getElementById('codeHead').hidden = true;
 document.getElementById('taskHead').hidden = true;
-document.getElementById('headAnim').src = "./src/assets/images/code.gif"
+document.getElementById('headAnim').src = gif
 
 const wordsOne = ['{', '}','(',')','this','class', 'export', '[',']']
 const wordsTwo = ['if', 'const', 'function','constructor', 'import', 'for']
@@ -32,12 +31,12 @@ function addContext(){
 function changeTask() {
     const mainHomeworks = addContext()
     document.getElementById("dropbtn").addEventListener('click', function(){
-        document.getElementById("dropdown-content").style.display = "block"
+    document.getElementById("dropdown-content").style.display = "block"
     })
     
   for (let i = 0; i < mainHomeworks.length; i++) {
       mainHomeworks[i].addEventListener("click", function () {
-        // console.log(document.getElementByid('rightbtn').style.top)
+        // console.log(document.getElementById('rightbtn'))
       document.getElementById('rightbtn').style.top = '0%'
       document.getElementById('dropdown').style.position = "relative"
       document.getElementById('codeBlock').hidden = false;

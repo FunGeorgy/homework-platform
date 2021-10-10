@@ -1,17 +1,13 @@
 
-Сборка сделанная на вебпаке для работы с 2D и 3D графикой
+Сборка сделанная на вебпаке для работы с 2D графикой и HTML документами. Специально для занятий на Web Developer.
 ## Особенности сборки
-* BABYLON js
 * PIXI.Js
 * animejs
-* используется [Babel](https://babeljs.io/) для поддержки современного JavaScript (ES6) в браузерах
+* используется [PIXI](https://pixijs.io/) для поддержки современного JavaScript (ES6) в браузерах
 * выбираете любой препроцессор SASS/SCSS/LESS
 * ваш CSS и JS оптимизируется и минифицируется
 * установлен пакет webpack-dev-server - вам не потребуется постоянно перезагружать браузер
 * поддержка [TypeScript](https://www.typescriptlang.org/)
-* анализ вашего бандла с помощью пакета [webpack-bundle-analyzer](https://www.npmjs.com/package/webpack-bundle-analyzer) | команда ```npm run stats```
-* [ESlint](https://eslint.org/) позволит сделать ваш код приятным и чистым
-* Поддержка и чтение файлов CSV/XML, на выходе получаем массив данных
 
 ## Файловая структура
 
@@ -21,7 +17,9 @@ webpack-frontend-template
 ├── src
 │   ├── assets
 │       ├── fonts
-│       └── images
+│       ├── images
+|       ├── styles
+|       └── content
 │   ├── styles
 │   ├── index.html
 │   └── index.js
@@ -37,10 +35,8 @@ webpack-frontend-template
 
 ## Команды
 
-* ```npm run dev``` - собираем development
 * ```npm run build``` - собираем production
 * ```npm start``` - слежение за файлами и открываем в браузере
-* ```npm run stats``` - смотрим размеры и статы бандла
 
 ## Установка
 

@@ -3,6 +3,10 @@ import { Box, Rhomb, Parallelogram, Circle, Ellipse, Trapezoid } from "./Homewor
 import { Rectangle } from "./Homework 7-10-21/geometry-model";
 import * as PIXI from "pixi.js"
 import anime from 'animejs/lib/anime.es.js';
+import fieldArt from '/src/assets/images/field.jpg'
+import startButton from '/src/assets/images/start.png'
+import ballArt from '/src/assets/images/ball.png'
+import { StandartSprite } from "../../ts/utils/assets-loader";
 
 export class Homework11_12 extends Homework{
     inputCont = document.getElementById("inputBox");
@@ -185,12 +189,12 @@ export class Homework11_12 extends Homework{
             width: 418, height: 315, backgroundColor: 0xc0c0c0, resolution: window.devicePixelRatio || 1,
             })
         this.field.appendChild(app.view)
-        const background = PIXI.Sprite.from('/src/assets/images/field.jpg')
+        const background = PIXI.Sprite.from(fieldArt)
         // background.anchor.set(0.5)
         app.stage.addChild(background)
         const movementSpeed = 0.05;
-        const ball = PIXI.Sprite.from('/src/assets/images/ball.png')
-        const start = PIXI.Sprite.from('/src/assets/images/start.png')
+        const ball = PIXI.Sprite.from(ballArt)
+        const start = PIXI.Sprite.from(startButton)
         
         ball.alpha = 0;
         start.scale.set(0.03)
