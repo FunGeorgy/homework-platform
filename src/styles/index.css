@@ -206,18 +206,38 @@ li{
   width: 200px;
   
 }
-
+.buttonblock{
+  position: relative;
+  margin-right: 0;
+  margin-left: 0;
+  top: 250px;
+  width: 200px;
+}
 .rightbtn{
   background-color: #4CAF50;
-  position: relative;
+  /* position: relative; */
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
   width: 200px;
-  margin-right: 0;
-  margin-left: auto;
+  /* margin-right: 0;
+  margin-left: auto; */
   top: 250px;
+}
+
+.rightbtn2{
+  background-color: #4CAF50;
+  /* position: relative; */
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  width: 200px;
+  /* margin-right: 0;
+  margin-left: auto; */
+  top: 100px;
+  margin-bottom: 10px;
 }
 
 .orange{

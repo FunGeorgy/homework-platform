@@ -23,7 +23,9 @@ function addContext(){
   let mainHomeworks = [];
   for(let i = 0; i < config.length; i++){
     mainHomeworks.push(document.getElementById("homework"+(i+1)+"button"))
+    document.getElementById("homework"+(i+1)+"button").textContent = config[i].description
   }
+  mainHomeworks.push(document.getElementById("lasthomework"))
   return mainHomeworks
 }
 
@@ -35,9 +37,11 @@ function changeTask() {
     })
     
   for (let i = 0; i < mainHomeworks.length; i++) {
-      mainHomeworks[i].addEventListener("click", function () {
-        // console.log(document.getElementById('rightbtn'))
-      document.getElementById('rightbtn').style.top = '0%'
+      mainHomeworks[i].addEventListener("click", function() {
+        console.clear()
+        if(i === mainHomeworks.length-1) console.log(config[mainHomeworks.length-2].description)
+        else console.log(config[i].description)
+      document.getElementById('blockid').style.top = '0%'
       document.getElementById('dropdown').style.position = "relative"
       document.getElementById('codeBlock').hidden = false;
       document.getElementById('homework').hidden = false;
@@ -49,9 +53,8 @@ function changeTask() {
       const homework = changeHomework(i, config)
       var context = document.getElementById("codeBlock")
       context.replaceChildren()
-      fileHelper(context, config[i].codeSrc)
-      
-
+      if(i === mainHomeworks.length-1) fileHelper(context, config[i-1].codeSrc)
+      else fileHelper(context, config[i].codeSrc)
     });
   }
 }
@@ -74,6 +77,7 @@ function changeHomework(i, config){
     case 2: return new Homework3(config[i])
     case 3: return new Homework10(config[i])
     case 4: return new Homework11_12(config[i])
+    default: return new Homework11_12(config[config.length-1])
   }
 }
 
