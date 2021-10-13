@@ -38,7 +38,7 @@
      @include grid(4, 2%);
   }
 } */
-
+/* в боди сразу задавай станартный стиль шрифта, его размер и вид. Которого будет больше всего на странице */
 body {
   background-color: rgb(175, 175, 175);
   color:white;
@@ -51,6 +51,7 @@ body {
 input.fst_input{
   size: 100px;
 }
+
 div.module{
   background: rgb(185, 185, 185); 
   position: absolute;
@@ -71,6 +72,8 @@ div.module{
   padding:50px;
 }
 
+/* посмотри запись mardgin слишком много их у тебя и это грязно,
+если не получается записать в 1 строчку, то лучше поискать другое свойство */
 .image{
   display: block;
   margin-left: auto;
@@ -79,7 +82,9 @@ div.module{
   height: 50%
 }
 
-
+/* padding у тебя для left and right и top and bottom один и тот же
+можно записать в 1 выражение padding: 10px 20px;
+Дальше ты в начале задаешь бордер, а потом пишешь что бордер none!?*/
 button.fstButton{
   box-sizing: border-box;
   background: rgb(185, 185, 185); 
@@ -95,6 +100,8 @@ button.fstButton{
   box-shadow: 0 2px #999;
   color: #000;
 }
+/* смотри коммент выше у тебя для  button можно создать отдельный класс и записать туда общие параметры,
+а потом уже по селектору вызывать их и дописывать уникальные свойства для них,  сокращает css и проще */
 button.closeButton{
   bottom: 5px;
   position: absolute;
@@ -189,7 +196,7 @@ li{
   overflow-y: scroll;
 }
 
-
+/* эта штука будет работать только в браузерах webkit мозила нахер идет и прочее???? */
 .codeBlock::-webkit-scrollbar-track {border-radius: 4px;}
 .codeBlock::-webkit-scrollbar {width: 6px;}
 .codeBlock::-webkit-scrollbar-thumb {border-radius: 4px;background: #f0f2f5;}
@@ -204,6 +211,8 @@ li{
   width: 200px;
   
 }
+/* старайся не задавать размеры для блоков в пикселях, делать так что бы у тебя был контейнер один с размерами
+фиксироваными а все что в нем было в процентах! проще будет с респонсом */
 .buttonblock{
   position: relative;
   margin-right: 0;
@@ -288,6 +297,7 @@ li{
   width: 200px;
 }
 
+/* float устаревшая вещь, есть FLEX - смотри и читай о нем, он упрощает жизнь в миллионы раз! */
 .column {
   float: left;
   width: 50%;
@@ -343,7 +353,9 @@ li{
  display: block;
  object-fit:cover;
 }
-
+/* ты  задал анимацию для border-color но не меняешь его. плюс в конце transition: border-color 0.2s;
+указывай Безье по которой будет происходит трансформа transition: border-color 0.2s ease-in; 
+или какую тебе больше хочеться или нужна*/
 input {
   font-family: inherit;
   margin-left: 1%;
