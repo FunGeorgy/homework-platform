@@ -7,7 +7,9 @@ import { Homework10 } from "./js/core/homework 30-09-2021.js";
 import { Homework11_12 } from "./js/core/homework 5-10-2021.js";
 import { config } from "./js/configs.js";
 import gif from "./assets/images/code.gif";
+// добавляем эффект на стартовую страницу
 
+// /добавляем эффект на стартовую страницу
 document.getElementsByTagName('input').text = "Input here"
 document.getElementById('codeBlock').hidden = true;
 document.getElementById('homework').hidden = true;
@@ -41,13 +43,18 @@ function changeTask() {
         console.clear()
         if(i === mainHomeworks.length-1) console.log(config[mainHomeworks.length-2].description)
         else console.log(config[i].description)
-      document.getElementById('blockid').style.top = '0%'
+      // document.getElementById('blockid').style.top = '0%'
       document.getElementById('dropdown').style.position = "relative"
       document.getElementById('codeBlock').hidden = false;
       document.getElementById('homework').hidden = false;
       document.getElementById('codeHead').hidden = false;
       document.getElementById('taskHead').hidden = false;
-      document.getElementById('headAnim').style.display = "none"
+      // красивый переход 
+      document.querySelector('.start-page').classList.add('disable')
+      setTimeout(() =>{
+        document.querySelector('.start-page').style.display = "none"
+      }, 500)
+      // /красивый переход
       document.getElementById("dropdown-content").style.display = "none"
       removeImage()
       const homework = changeHomework(i, config)
