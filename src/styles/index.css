@@ -3,41 +3,11 @@
   margin: 0 auto;
   width: 100%;
 }
-#babylon{
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 100;
-  left: 0px;
-}
+
 *{
   padding: 0;
   margin: 0;
 }
-/* // .block:not(.first){
-//   background-color: $blColor;
-//   height: $blHeigt;
-//   width: $blWidth;
-//   margin-bottom: $blMarginBot;
-//   border: $blborder;
-// } */
-/* .first{
-  background-color: yellow;
-  height: 100px;
-  width: $blWidth;
-  margin-bottom: $blMarginBot;
-  border: $blborder;
-} */
-
-/* #grid{
-  float: left;
-  width: 100%;
- берем только дочерние элементы блока grid
-  >div{
-    float: left;
-     @include grid(4, 2%);
-  }
-} */
 
 body {
   background-color: rgb(175, 175, 175);
@@ -203,41 +173,35 @@ li{
   padding: 16px;
   font-size: 16px;
   border: none;
+  margin-top: 50px;
   width: 200px;
   
 }
 .buttonblock{
-  position: relative;
+  position: absolute;
   margin-right: 0;
   margin-left: 0;
   top: 250px;
   width: 200px;
+  display: flex;
+  flex-direction: column;
 }
 .rightbtn{
   background-color: #4CAF50;
-  /* position: relative; */
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
-  width: 200px;
-  /* margin-right: 0;
-  margin-left: auto; */
   top: 250px;
 }
 
 .rightbtn2{
   background-color: #4CAF50;
-  /* position: relative; */
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
-  width: 200px;
-  /* margin-right: 0;
-  margin-left: auto; */
-  top: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .orange{
