@@ -6,7 +6,6 @@ import anime from 'animejs/lib/anime.es.js';
 import fieldArt from '/src/assets/images/field.jpg'
 import startButton from '/src/assets/images/start.png'
 import ballArt from '/src/assets/images/ball.png'
-import { StandartSprite } from "../../ts/utils/assets-loader";
 
 export class Homework11_12 extends Homework{
     inputCont = document.getElementById("inputBox");

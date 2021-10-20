@@ -8,61 +8,12 @@
     <title>New project</title>
 </head>
 <body>
-<!-- Твоя шляпа! -->
-<!-- <div class="container">
-    <div id="app">
-      <div>
-        <img id="headAnim" class="imgHead"></img>
-      </div>
-      <div id="grid">
-        <div class="dropdown" id="dropdown">
-          <button class="dropbtn" id="dropbtn">Choose Homework</button>
-          <div class="dropdown-content" id="dropdown-content">
-            <button class="menuContent" id="homework1button"></button>
-            <button class="menuContent" id="homework2button"></button>
-            <button class="menuContent" id="homework3button"></button>
-            <button class="menuContent" id="homework4button"></button>
-            <button class="menuContent" id="homework5button"></button>
-          </div>
-        </div>
-       
-      </div>
-      </div>
-      </div>
-      <div> 
-        <div class="buttonblock" id="blockid">
-          <button class="rightbtn2" id="lasthomework">Last Homework</button>
-          <button class="rightbtn" id="rightbtn">
-          <a class ="link" href="https://github.com/FunGeorgy" target="_blank">Go to Git</a>
-          </button>
-        </div>
-        <div id ="head" class="head"></div>
-        <div class = 'row'>
-          <div class = 'column'>
-            <div class = "taskHead" id = "taskHead">
-              <h2>Task view</h2>
-            </div>
-            <div class=homework id="homework">
-          Homework will be here (Click button choose Homework)
-        </div>
-      </div>
-      <div class = 'column'>
-        <div class = "codeHead" id = "codeHead">
-          <h2>Code view</h2>
-        </div>
-        <div id="codeBlock" class = "codeBlock">Code will be here
-        </div>
-      </div>
-  </div>
-</div> -->
-<!-- Твоя шляпа! -->
-<!-- Изменения v.2 -->
 <!-- общий блок для всего! -->
 <div class="container-fluid">
   <!-- блок с кнопками -->
   <div class="btn-block" id="blockid">
     <button class="btn btn--last rightbtn2" id="lasthomework">Last Homework</button>
-    <a class ="btn btn--link" href="https://github.com/FunGeorgy" target="_blank">
+    <a class ="btn btn--link" id="gitLink" href="https://github.com/FunGeorgy" target="_blank">
       <!-- что бы  отцентровать надпись в ссылке, внутрь положил span -->
       <span>Go to Git</span>
     </a>
@@ -90,41 +41,23 @@
   <!-- Контент -->
   <div class="main-section"> 
     <div id="head" class="head">
-      <img class="image" id="image" src="http://localhost:8080/f5a6554344c074f921c1.png">
     </div>
-
     <div class="row">
       <div class="column">
-        <div class="taskHead" id="taskHead">
+        <div class="codeHead" id="taskHead">
           <h2>Task view</h2>
         </div>
-        <div class="homework" id="homework">
-          <div>
-            <h2>Задание 1</h2>
-            <h3>Фигуры и их отображение</h3>
-            <input id="inputBox">
-            <button id="check_button">Введите название фигуры</button>
-            <div id="div_input"></div>
-            <div id="object_figure" style="width: 300px; height: 300px;"></div>
-            <div>
-              <h2>Задание 2</h2>
-              <h3>Футбольное поле</h3>
-              <div id="field">
-                <canvas width="418" height="315" style="touch-action: none; cursor: inherit;"></canvas>
-              </div>
-            </div>
-          </div>
+        <div class=homework id="homework">
+          Homework will be here (Click button choose Homework)
         </div>
       </div>
-      <div class="column">
-        <div class="codeHead" id="codeHead">
+      <div class = 'column'>
+        <div class = "codeHead" id = "codeHead">
           <h2>Code view</h2>
         </div>
-        <div id="codeBlock" class = "codeBlock">Code will be here
-        </div>
+        <div id="codeBlock" class = "codeBlock">Code will be here</div>
       </div>
     </div>
-  </div>
   <!-- /Контент -->
 </div>
 <!-- /общий блок для всего! -->
