@@ -1,23 +1,25 @@
 import "./styles/index.css";
 import "./assets/fonts/Roboto-Regular.ttf";
-import { Homework1 } from "./js/core/homework 19-08-2021.js";
-import { Homework2 } from "./js/core/homework 24-08-2021.js";
-import { Homework3 } from "./js/core/homework 25-08-21.js";
-import { Homework10 } from "./js/core/homework 30-09-2021.js";
-import { Homework11_12 } from "./js/core/homework 5-10-2021.js";
+import { Homework1 } from "./js/core/homework 17-08-2021.js";
+import { Homework2 } from "./js/core/homework 19-08-2021.js";
+import { Homework3 } from "./js/core/homework 24-08-21.js";
+import { Homework4 } from "./js/core/homework 26-08-2021.js";
+import { Homework5 } from "./js/core/homework 31-08-2021.js";
+import { Homework6 } from "./js/core/homework 02-09-2021.js";
+import { Homework7 } from "./js/core/homework 14-09-2021.js";
+import { Homework8 } from "./js/core/homework 16-09-2021.js";
+import { Homework9 } from "./js/core/homework 21-09-2021.js";
+import { Homework10 } from "./js/core/homework 28-09-2021.js";
+import { Homework11_12 } from "./js/core/homework 30-09-2021.js";
+import { Homework13 } from "./js/core/homework 12-10-2021.js";
+import { Homework14 } from "./js/core/homework 19-10-2021.js";
+import { Homework15 } from "./js/core/homework 21-10-2021.js";
+
 import { config } from "./js/configs.js";
 import gif from "./assets/images/code.gif";
 import anime from "animejs";
-// добавляем эффект на стартовую страницу
 
-// /добавляем эффект на стартовую страницу
-document.getElementsByTagName("input").text = "Input here";
-document.getElementById("codeBlock").hidden = true;
-document.getElementById("homework").hidden = true;
-document.getElementById("codeHead").hidden = true;
-document.getElementById("taskHead").hidden = true;
-document.getElementById("headAnim").src = gif;
-
+// global values
 let isDone = false;
 let doOnce = true;
 const wordsOne = ["{", "}", "(", ")", "this", "class", "export", "[", "]"];
@@ -38,7 +40,15 @@ function addContext() {
 }
 
 // Change task to create new divs and removes old ones
+// ОСНОВНАЯ ФУНКЦИЯ
 function changeTask() {
+  document.getElementsByTagName("input").text = "Input here";
+  document.getElementById("codeBlock").hidden = true;
+  document.getElementById("homework").hidden = true;
+  document.getElementById("codeHead").hidden = true;
+  document.getElementById("taskHead").hidden = true;
+  document.getElementById("headAnim").src = gif;
+  console.log(config[0]);
   const mainHomeworks = addContext();
   document.getElementById("dropbtn").addEventListener("click", function () {
     document.getElementById("dropdown-content").style.display = "block";
@@ -46,86 +56,82 @@ function changeTask() {
 
   for (let i = 0; i < mainHomeworks.length; i++) {
     mainHomeworks[i].addEventListener("click", function () {
-      return new Promise((resolve)=> {
+      return new Promise((resolve) => {
         console.clear();
-        if(doOnce){
+        if (doOnce) {
           doOnce = false;
           animations();
         }
         document.getElementById("dropdown-content").style.display = "none";
-      if (i === mainHomeworks.length - 1)
-        console.log(config[mainHomeworks.length - 2].description);
-      else console.log(config[i].description);
-      removeImage();
-      const homework = changeHomework(i, config);
-      var context = document.getElementById("codeBlock");
-      context.replaceChildren();
-      if (i === mainHomeworks.length - 1)
-        fileHelper(context, config[i - 1].codeSrc);
-      else fileHelper(context, config[i].codeSrc);
-      setTimeout(()=>resolve('here'), 3500);
-      }).then(()=> isDone = true)
-      
+        if (i === mainHomeworks.length - 1)
+          console.log(config[mainHomeworks.length - 2].description);
+        else console.log(config[i].description);
+        removeImage();
+        const homework = changeHomework(i, config);
+        var context = document.getElementById("codeBlock");
+        context.replaceChildren();
+        if (i === mainHomeworks.length - 1)
+          fileHelper(context, config[i - 1].codeSrc);
+        else fileHelper(context, config[i].codeSrc);
+        setTimeout(() => resolve("here"), 3500);
+      }).then(() => (isDone = true));
     });
   }
 
-  document.getElementById("blockid").addEventListener('mouseover', function(){
-    if(!isDone) return
-    const timeline = anime.timeline()
+  document.getElementById("blockid").addEventListener("mouseover", function () {
+    if (!isDone) return;
+    const timeline = anime.timeline();
     timeline.add({
-      targets:  document.getElementById('lasthomework'),
+      targets: document.getElementById("lasthomework"),
       translateX: 0,
       easing: "easeInSine",
       duration: 200,
-    })
+    });
     timeline.add({
-      targets:  document.getElementById('gitLink'),
+      targets: document.getElementById("gitLink"),
       translateX: 0,
       easing: "linear",
       duration: 400,
-    })
+    });
     timeline.add({
-      targets:  document.getElementById('dropbtn'),
+      targets: document.getElementById("dropbtn"),
       translateX: 0,
       easing: "linear",
       duration: 400,
-    })
-  })
+    });
+  });
 
-  document.getElementById("blockid").addEventListener('mouseout', function(){
-    if(!isDone) return
-    let xPath = 140
-    let sizeWidth = 125
-    const timeline = anime.timeline()
+  document.getElementById("blockid").addEventListener("mouseout", function () {
+    if (!isDone) return;
+    let xPath = 140;
+    let sizeWidth = 125;
+    const timeline = anime.timeline();
     timeline.add({
-      targets:  document.getElementById('lasthomework'),
+      targets: document.getElementById("lasthomework"),
       translateX: -xPath,
       easing: "easeInSine",
       duration: 200,
-    })
+    });
     timeline.add({
-      targets:  document.getElementById('gitLink'),
-      translateX: -(xPath*2 + sizeWidth),
+      targets: document.getElementById("gitLink"),
+      translateX: -(xPath * 2 + sizeWidth),
       easing: "linear",
       duration: 400,
-    })
+    });
     timeline.add({
-      targets:  document.getElementById('dropbtn'),
-      translateX: -(xPath*3 + sizeWidth*2),
+      targets: document.getElementById("dropbtn"),
+      translateX: -(xPath * 3 + sizeWidth * 2),
       easing: "linear",
       duration: 400,
-    })
-  })
+    });
+  });
 }
 
 function removeImage() {
-  // let obj =  document.getElementById("head")
   let img = document.getElementById("image");
   if (img) img.parentNode.removeChild(img);
   else return;
 }
-
-changeTask();
 
 function changeHomework(i, config) {
   switch (i) {
@@ -136,11 +142,34 @@ function changeHomework(i, config) {
     case 2:
       return new Homework3(config[i]);
     case 3:
-      return new Homework10(config[i]);
+      return new Homework4(config[i]);
     case 4:
+      return new Homework5(config[i]);
+    case 5:
+      return new Homework6(config[i]);
+    case 6:
+      return new Homework7(config[i]);
+    case 7:
+      return new Homework8(config[i]);
+    case 8:
+      return new Homework9(config[i]);
+    case 9:
+      return new Homework10(config[i]);
+    case 10:
       return new Homework11_12(config[i]);
+    case 11:
+      return new Homework11_12(config[i]);
+    case 12:
+      return new Homework13(config[i]);
+    case 13:
+      return new Homework14(config[i]);
+    case 14:
+      return new Homework15(config[i]);
+    case 15:
+      return new Homework15(config[i]);
+
     default:
-      return new Homework11_12(config[config.length - 1]);
+      return new Homework15(config[config.length - 1]);
   }
 }
 
@@ -188,7 +217,7 @@ function highlight(code, symbol) {
 function documentChange() {
   // btn.block
   document.querySelector(".btn-block").style.flexDirection = "row";
-  document.querySelector(".btn-block").style.width = "100%";
+  document.querySelector(".btn-block").style.width = "30%";
   // .btn
   document.querySelector(".btn").style.marginRight = "20px";
   document.querySelector(".btn").style.maxWidth = "125px";
@@ -206,7 +235,6 @@ function documentChange() {
   document.getElementById("homework").hidden = false;
   document.getElementById("codeHead").hidden = false;
   document.getElementById("taskHead").hidden = false;
-  
 }
 
 function animations() {
@@ -239,22 +267,24 @@ function animations() {
     easing: "linear",
   });
   timeline.add({
-    targets:  document.getElementById('lasthomework'),
+    targets: document.getElementById("lasthomework"),
     translateX: -140,
     easing: "easeInSine",
     duration: 200,
-  })
+  });
   timeline.add({
-    targets:  document.getElementById('gitLink'),
-    translateX: -(140*2+125),
+    targets: document.getElementById("gitLink"),
+    translateX: -(140 * 2 + 125),
     easing: "linear",
     duration: 400,
-  })
+  });
   timeline.add({
-    targets:  document.getElementById('dropbtn'),
-    translateX: -(140*3+250),
+    targets: document.getElementById("dropbtn"),
+    translateX: -(140 * 3 + 250),
     easing: "linear",
     duration: 400,
-  })
-  return timeline
+  });
+  return timeline;
 }
+
+changeTask();

@@ -6,4 +6,5 @@ declare module '*.eot';
 declare module '*.ico';
 declare module '*.woff';
 declare module '*.txt';
+declare module '*.html';
 

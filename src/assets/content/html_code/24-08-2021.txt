@@ -1,0 +1,25 @@
+<div>
+    <h2>Задание 1</h2>
+    <h3>Ответьте на 10 вопросов</h3>
+    <div id="question_count"></div><input id="question_input"></input><button id=question_button>Проверить
+        ответ</button>
+</div>
+<div>
+    <h2>Задание 2</h2>
+    <h3>Введите возраст</h3>
+    <div id="age_count"></div><input id="question_age_input"></input><button id=question_age_button>Проверить
+        возраст</button>
+</div>
+<div>
+    <h2>Задание 3</h2>
+    <h3>Введите два числа и знак</h3>
+    <div id="content_cont"></div><input id="number1_input"></input><input id="number2_input"></input><button
+        id=action_button>Показать результат</button>
+</div>
+<div>
+    <h2>Задание 4</h2>
+    <h3>Введите количество чисел</h3>
+    <div id="message_cont"></div>
+    <div id="answer_cont"></div><input id="number_length_input"></input><button id=button_counts>Показать
+        результат</button>
+</div>

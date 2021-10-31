@@ -1,0 +1,12 @@
+<div>
+    <h2>Студенты</h2>
+    <h3>Введите информацию о студенте</h3>
+<input id="studentNameInput"></input>
+<input id="studentSurNameInput"></input>
+<input id="studentAgeInput"></input>
+<input id="studentSexInput"></input>
+<input id="studentAvrInput"></input>
+<button id="studentButton">Добавить студента</button>
+<button id="stopButton">Завершить создание группы</button>
+<div id="resultLabel"></div>
+</div>

@@ -1,0 +1,11 @@
+<div>
+    <h2>Задание 1</h2>
+    <h3>Фигуры и их отображение</h3><input id='inputBox'></input><button id='check_button'>Введите название
+        фигуры</button>
+    <div id='div_input'></div>
+    <div id='object_figure'></div>
+    <div>
+        <h2>Задание 2</h2>
+        <h3>Футбольное поле</h3>
+        <div id='field'></div>
+    </div>

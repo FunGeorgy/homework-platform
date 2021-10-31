@@ -1,0 +1,22 @@
+<div>
+    <h2>Работа с функциями</h2>
+    <h3>Введите числа</h3>
+<ul>
+<li>
+<input id="number1_input"></input>
+</li>
+<input id="number2_input"></input>
+<li>
+<input id="number3_input"></input>
+</li>
+</ul>
+<h3>Введите время в формате чч:мм:cc</h3>
+<ul>
+<input id="time1_input"></input>
+<li>
+<input id="time2_input"></input>
+</li>
+</ul>
+<button id="result_button">Показать все функции</button>
+<div id="result_cont"></div>
+</div>

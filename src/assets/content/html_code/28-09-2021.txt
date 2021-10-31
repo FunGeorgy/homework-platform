@@ -1,0 +1,24 @@
+<div class="boarder">
+            <h2>Задание 1</h2>
+            <h3>Enter your name (name can't contain digits)</h3>
+            <input id="input" class="fst_input"></input>
+            </div>
+            <div class="boarder">
+            <h2>Задание 2</h2>
+           <h3>Open a module window</h3>
+            <button id="moduleButton" class="fstButton">Open</button></div>
+            <div class="boarder">
+            <h2>Задание 3</h2>
+            <h3>ThreeColor</h3>
+            <ul>
+<li>
+<div class = "radius", id="green">
+            </div>
+</li>
+<li>
+<div class = "radius", id="yellow"></div>
+            </li>
+<li>
+<div class = "radius", id="red"></div></li>
+            </ul>
+            <button id="thirdButton" class="radiusButton">Switch</button></div><div class="block"></div>

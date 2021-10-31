@@ -1,0 +1,21 @@
+<div>
+    <h2>Задание 1</h2>
+    <h3>Проверить возраст</h3>
+    <div id="ageCount"></div><input id="input1"></input><button id=button1>Проверить возраст</button>
+</div>
+<div>
+    <h2>Задание 2</h2>
+    <h3>Введите год</h3>
+    <div id="yearCount"></div><input id="input2"></input><button id=button2>Проверить год</button>
+</div>
+<div>
+    <h2>Задание 3</h2>
+    <h3>Введитe цену товара</h3>
+    <div id="costCount"></div><input id="input3"></input><button id=button3>Проверить скидку</button>
+</div>
+<div>
+    <h2>Задание 4</h2>
+    <h3>Можно ли вставить квадрат в окружности</h3>
+    <div id="countResult"></div><input id="circle_input"></input><input id="box_input"></input><button
+        id=button4>Проверить вписывается ли квадрат в окружность</button>
+</div>
